@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Место</title>
+  <link rel="stylesheet" href="pages/index.css">
+  <meta name="author" content="Mikhail Ermachenko"> 
+</head>
+
+<body class="background">
+  <div class="page">
+    <header class="header">
+      <div class="header__logo"></div>
+      <div class="header__line"></div>
+    </header>
+    <main class="content">
+      <section class="profile">
+        <div class="profile__items">
+          <div class="profile__avatar"></div>
+          <div class="profile__info">
+            <div class="profile__title-button">
+              <h1 class="profile__title">Жак-Ив Кусто</h1>
+              <button class="profile__edit-button"></button>
+            </div>
+            <p class="profile__subtitle">Исследователь океана</p>
+          </div>
+        </div>
+        <a class="profile__add-button" href="#"></a>
+      </section>
+      <section class="elements">
+        <article class="element">
+          <img class="element__image" src="images/karachaevsk.png" alt="здесь должна быть фотография">
+          <div class="element__items">
+            <h2 class="element__title">Карачаевск</h2>
+            <a class="element__like" href="#"></a>
+          </div>
+        </article>
+        <article class="element">
+          <img class="element__image" src="images/mount-elbrus.png" alt="здесь должна быть фотография">
+          <div class="element__items">
+            <h2 class="element__title">Гора Эльбрус</h2>
+            <a class="element__like" href="#"></a>
+          </div>
+        </article>
+        <article class="element">
+          <img class="element__image" src="images/dombai.png" alt="здесь должна быть фотография">
+          <div class="element__items">
+            <h2 class="element__title">Домбай</h2>
+            <a class="element__like" href="#"></a>
+          </div>
+        </article>
+        <article class="element">
+          <img class="element__image" src="images/mount-elbrus.png" alt="здесь должна быть фотография">
+          <div class="element__items">
+            <h2 class="element__title">Гора Эльбрус</h2>
+            <a class="element__like" href="#"></a>
+          </div>
+        </article>
+        <article class="element">
+          <img class="element__image" src="images/dombai.png" alt="здесь должна быть фотография">
+          <div class="element__items">
+            <h2 class="element__title">Домбай</h2>
+            <a class="element__like" href="#"></a>
+          </div>
+        </article>
+        <article class="element">
+          <img class="element__image" src="images/karachaevsk.png" alt="здесь должна быть фотография">
+          <div class="element__items">
+            <h2 class="element__title">Карачаево-черкесия</h2>
+            <a class="element__like" href="#"></a>
+          </div>
+        </article>
+      </section>
+        <footer class="footer">
+          <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
+        </footer>
+      <div class="popup popup_open">
+        <div class="popup__container">
+          <button class="popup__close"></button>
+          <h2 class="popup__title">Редактировать профиль</h2>
+          <form class="popup__forms">
+            <input type="text" value="Жак-Ив Кусто" class="popup__input popup__input_type_name">
+            <div class="popup__line"></div>
+            <input type="text" value="Исследователь океана" class="popup__input popup__input_type_job">
+            <div class="popup__line"></div>
+            <button type="submit" class="popup__save">Сохранить</button>
+          </form>
+          </div>
+        <div class="popup__cover"></div>
+      </div>
+    </main>
+  </div>
+  <script src="scripts/popup.js"></script>
+</body>
+
+</html>
