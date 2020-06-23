@@ -1,5 +1,6 @@
 .page {
   margin: 0 auto 0;
+  position: relative;
   font-family: 'Inter', Arial, sans-serif;
   min-width: 300px;
   max-width: 1200px;
@@ -27,11 +28,5 @@
 @media (max-width: 650px) {
   .page {
     max-width: 400px;
-  }
-}
-
-@media (max-width: 450px) {
-  .page {
-    max-width: 282px;
   }
 }

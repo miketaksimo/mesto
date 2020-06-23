@@ -4,6 +4,8 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 18px 21px;
+  list-style: none;
+  padding: 0;
 }
 
 @media (max-width: 768px) {
@@ -19,5 +21,11 @@
     margin-top: 36px;
     grid-template-columns: 1fr;
     column-gap: 20px;
+  }
+}
+
+@media (max-width: 450px) {
+  .elements {
+    max-width: 282px;
   }
 }

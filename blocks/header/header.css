@@ -1,10 +1,11 @@
 @import url(./__logo/header__logo.css);
-@import url(./__line/header__line.css);
 
 .header {
   padding-top: 45px;
   margin: 0 auto 0;
   max-width: 882px;
+  border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+  padding-bottom: 40px;
 }
 
 @media (max-width: 950px) {
@@ -16,11 +17,21 @@
 @media (max-width: 768px) {
   .header {
     padding-top: 35px;
+    padding-bottom: 35px;
   }
 }
 
 @media (max-width: 450px) {
   .header {
     padding-top: 28px;
+    padding-bottom: 30px;
+    max-width: 282px;
+  }
+}
+
+@media (max-width: 350px) {
+  .header {
+    padding-top: 28px;
+    max-width: 100%;
   }
 }

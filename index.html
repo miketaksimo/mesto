@@ -12,13 +12,12 @@
 <body class="background">
   <div class="page">
     <header class="header">
-      <div class="header__logo"></div>
-      <div class="header__line"></div>
+      <img class="header__logo" src="images/header-logo.svg" alt="Логотип">
     </header>
     <main class="content">
       <section class="profile">
         <div class="profile__items">
-          <div class="profile__avatar"></div>
+          <img class="profile__avatar" src="images/avatar.jpg" alt="Аватар">
           <div class="profile__info">
             <div class="profile__title-button">
               <h1 class="profile__title">Жак-Ив Кусто</h1>
@@ -27,70 +26,70 @@
             <p class="profile__subtitle">Исследователь океана</p>
           </div>
         </div>
-        <a class="profile__add-button" href="#"></a>
+        <button class="profile__add-button" href="#"></button>
       </section>
-      <section class="elements">
-        <article class="element">
-          <img class="element__image" src="images/karachaevsk.png" alt="здесь должна быть фотография">
-          <div class="element__items">
-            <h2 class="element__title">Карачаевск</h2>
-            <a class="element__like" href="#"></a>
-          </div>
-        </article>
-        <article class="element">
-          <img class="element__image" src="images/mount-elbrus.png" alt="здесь должна быть фотография">
-          <div class="element__items">
-            <h2 class="element__title">Гора Эльбрус</h2>
-            <a class="element__like" href="#"></a>
-          </div>
-        </article>
-        <article class="element">
-          <img class="element__image" src="images/dombai.png" alt="здесь должна быть фотография">
-          <div class="element__items">
-            <h2 class="element__title">Домбай</h2>
-            <a class="element__like" href="#"></a>
-          </div>
-        </article>
-        <article class="element">
-          <img class="element__image" src="images/mount-elbrus.png" alt="здесь должна быть фотография">
-          <div class="element__items">
-            <h2 class="element__title">Гора Эльбрус</h2>
-            <a class="element__like" href="#"></a>
-          </div>
-        </article>
-        <article class="element">
-          <img class="element__image" src="images/dombai.png" alt="здесь должна быть фотография">
-          <div class="element__items">
-            <h2 class="element__title">Домбай</h2>
-            <a class="element__like" href="#"></a>
-          </div>
-        </article>
-        <article class="element">
-          <img class="element__image" src="images/karachaevsk.png" alt="здесь должна быть фотография">
-          <div class="element__items">
-            <h2 class="element__title">Карачаево-черкесия</h2>
-            <a class="element__like" href="#"></a>
-          </div>
-        </article>
+      <section>
+        <ul class="elements">
+          <li class="element"><article>
+            <img class="element__image" src="images/karachaevsk.png" alt="здесь должна быть фотография">
+            <div class="element__items">
+              <h2 class="element__title">Карачаевск</h2>
+              <button class="element__like"></button>
+            </div>
+          </article></li>
+          <li class="element"><article>
+            <img class="element__image" src="images/mount-elbrus.png" alt="здесь должна быть фотография">
+            <div class="element__items">
+              <h2 class="element__title">Гора Эльбрус</h2>
+              <button class="element__like"></button>
+            </div>
+          </article></li>
+          <li class="element"><article>
+            <img class="element__image" src="images/dombai.png" alt="здесь должна быть фотография">
+            <div class="element__items">
+              <h2 class="element__title">Домбай</h2>
+              <button class="element__like"></button>
+            </div>
+          </article></li>
+          <li class="element"><article>
+            <img class="element__image" src="images/mount-elbrus.png" alt="здесь должна быть фотография">
+            <div class="element__items">
+              <h2 class="element__title">Гора Эльбрус</h2>
+              <button class="element__like"></button>
+            </div>
+          </article></li>
+          <li class="element"><article>
+            <img class="element__image" src="images/dombai.png" alt="здесь должна быть фотография">
+            <div class="element__items">
+              <h2 class="element__title">Домбай</h2>
+              <button class="element__like"></button>
+            </div>
+          </article></li>
+          <li class="element"><article>
+            <img class="element__image" src="images/karachaevsk.png" alt="здесь должна быть фотография">
+            <div class="element__items">
+              <h2 class="element__title">Карачаево-черкесия</h2>
+              <button class="element__like"></button>
+            </div>
+          </article></li>
+        </ul>
       </section>
-        <footer class="footer">
-          <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
-        </footer>
-      <div class="popup popup_open">
+      <div class="popup">
         <div class="popup__container">
           <button class="popup__close"></button>
           <h2 class="popup__title">Редактировать профиль</h2>
           <form class="popup__forms">
-            <input type="text" value="Жак-Ив Кусто" class="popup__input popup__input_type_name">
-            <div class="popup__line"></div>
-            <input type="text" value="Исследователь океана" class="popup__input popup__input_type_job">
-            <div class="popup__line"></div>
+            <input type="text" name="name" value="Жак-Ив Кусто" class="popup__input popup__input_type_name">
+            <input type="text" name="job" value="Исследователь океана" class="popup__input popup__input_type_job">
             <button type="submit" class="popup__save">Сохранить</button>
           </form>
           </div>
         <div class="popup__cover"></div>
       </div>
     </main>
+    <footer class="footer">
+      <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
+    </footer>
   </div>
   <script src="scripts/popup.js"></script>
 </body>
