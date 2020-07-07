@@ -1,0 +1,9 @@
+.popup__container_edit {
+  max-width: 430px;
+}
+
+@media (max-width: 450px) {
+  .popup__container_edit {
+    width: 240px;
+  }
+}

@@ -1,15 +1,8 @@
 .popup__container {
-  max-width: 430px;
   background: white;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   z-index: 1;
   position: fixed;
-}
-
-@media (max-width: 450px) {
-  .popup__container {
-    width: 100%;
-  }
 }
