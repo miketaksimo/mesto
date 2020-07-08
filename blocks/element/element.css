@@ -14,4 +14,10 @@
   flex-direction: column;
   position: relative;
   overflow: hidden;
+  transition: opacity .1s;
+}
+
+.element:hover {
+  opacity: .8;
+  cursor: pointer;
 }

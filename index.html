@@ -31,35 +31,6 @@
       <section>
         <ul class="elements"></ul>
       </section>
-      <div class="popup popup_edit">
-        <div class="popup__container popup__container_edit">
-          <button class="popup__close popup__close_edit" type="button"></button>
-          <h2 class="popup__title">Редактировать профиль</h2>
-          <form class="popup__forms popup__forms_edit">
-            <input type="text" name="profile-name" value="Жак-Ив Кусто" class="popup__input popup__input_edit_name">
-            <input type="text" name="profile-job" value="Исследователь океана" class="popup__input popup__input_edit_job">
-            <button type="submit" class="popup__save popup__save_edit">Сохранить</button>
-          </form>
-        </div>
-      </div>
-      <div class="popup popup_add">
-        <div class="popup__container popup__container_add">
-          <button class="popup__close popup__close_add" type="button"></button>
-          <h2 class="popup__title">Новое место</h2>
-          <form class="popup__forms popup__forms_add">
-            <input type="text" name="add-name" placeholder="Название" class="popup__input popup__input_add_name">
-            <input type="url" name="add-url" placeholder="Ссылка на картинку" class="popup__input popup__input_add_url">
-            <button type="submit" class="popup__save popup__save_add">Создать</button>
-          </form>
-        </div>
-      </div>
-      <div class="popup popup_image">
-        <div class="popup__container popup__container_image">
-            <button class="popup__close popup__close_image" type="button"></button>
-            <img alt="Изображение" class="popup__img">
-            <p class="popup__img-caption"></p>
-        </div>
-      </div>
       <template class="element-template">
         <li class="element">
           <button class="element__delete" type="button"></button>
@@ -75,7 +46,37 @@
       <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
     </footer>
   </div>
+  <div class="popup popup_edit">
+    <div class="popup__container popup__container_edit">
+      <button class="popup__close popup__close_edit" type="button"></button>
+      <h2 class="popup__title">Редактировать профиль</h2>
+      <form class="popup__forms popup__forms_edit" name="forms_edit">
+        <input type="text" name="profile-name" value="Жак-Ив Кусто" class="popup__input popup__input_edit_name">
+        <input type="text" name="profile-job" value="Исследователь океана" class="popup__input popup__input_edit_job">
+        <button type="submit" class="popup__save popup__save_edit">Сохранить</button>
+      </form>
+    </div>
+  </div>
+  <div class="popup popup_add">
+    <div class="popup__container popup__container_add">
+      <button class="popup__close popup__close_add" type="button"></button>
+      <h2 class="popup__title">Новое место</h2>
+      <form class="popup__forms popup__forms_add" name="forms_add">
+        <input type="text" name="add-name" placeholder="Название" class="popup__input popup__input_add_name">
+        <input type="url" name="add-url" placeholder="Ссылка на картинку" class="popup__input popup__input_add_url">
+        <button type="submit" class="popup__save popup__save_add">Создать</button>
+      </form>
+    </div>
+  </div>
+  <div class="popup popup_image">
+    <div class="popup__container popup__container_image">
+        <button class="popup__close popup__close_image" type="button"></button>
+        <img alt="Изображение" class="popup__img">
+        <p class="popup__img-caption"></p>
+    </div>
+  </div>
   <script src="scripts/script.js"></script>
+  <script src="scripts/initialElements.js"></script>
 </body>
 
 </html>
