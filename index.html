@@ -47,28 +47,35 @@
     </footer>
   </div>
   <div class="popup popup_edit">
+    <div class="popup__overlay"></div>
     <div class="popup__container popup__container_edit">
       <button class="popup__close popup__close_edit" type="button"></button>
       <h2 class="popup__title">Редактировать профиль</h2>
-      <form class="popup__forms popup__forms_edit" name="forms_edit">
-        <input type="text" name="profile-name" value="Жак-Ив Кусто" class="popup__input popup__input_edit_name">
-        <input type="text" name="profile-job" value="Исследователь океана" class="popup__input popup__input_edit_job">
+      <form class="popup__forms popup__forms_edit" name="forms_edit" novalidate>
+        <input type="text" name="profile-name" id="name-input" value="Жак-Ив Кусто" class="popup__input popup__input_edit_name" required minlength="2" maxlength="40">
+        <span class='popup__error' id='name-input-error'></span>
+        <input type="text" name="profile-job" id="job-input" value="Исследователь океана" class="popup__input popup__input_edit_job" required minlength="2" maxlength="200">
+        <span class='popup__error' id='job-input-error'></span>
         <button type="submit" class="popup__save popup__save_edit">Сохранить</button>
       </form>
     </div>
   </div>
   <div class="popup popup_add">
+    <div class="popup__overlay"></div>
     <div class="popup__container popup__container_add">
       <button class="popup__close popup__close_add" type="button"></button>
       <h2 class="popup__title">Новое место</h2>
-      <form class="popup__forms popup__forms_add" name="forms_add">
-        <input type="text" name="add-name" placeholder="Название" class="popup__input popup__input_add_name">
-        <input type="url" name="add-url" placeholder="Ссылка на картинку" class="popup__input popup__input_add_url">
+      <form class="popup__forms popup__forms_add" name="forms_add" novalidate>
+        <input type="text" name="add-name" id="add-name-input" placeholder="Название" class="popup__input popup__input_add_name" required minlength="1" maxlength="30">
+        <span class='popup__error' id='add-name-input-error'></span>
+        <input type="url" name="add-url" id="add-url-input" placeholder="Ссылка на картинку" class="popup__input popup__input_add_url" required>
+        <span class='popup__error' id='add-url-input-error'></span>
         <button type="submit" class="popup__save popup__save_add">Создать</button>
       </form>
     </div>
   </div>
   <div class="popup popup_image">
+    <div class="popup__overlay"></div>
     <div class="popup__container popup__container_image">
         <button class="popup__close popup__close_image" type="button"></button>
         <img alt="Изображение" class="popup__img">
