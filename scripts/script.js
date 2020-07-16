@@ -5,8 +5,8 @@ const popupEditCloseButton = document.querySelector('.popup__close_edit');
 const popupEditForms = document.querySelector('.popup__forms_edit');
 const profileName = document.querySelector('.profile__title');
 const profileJob = document.querySelector('.profile__subtitle');
-const popupInputEditname = document.querySelector('.popup__input_edit_name')
-const popupInputEditjob = document.querySelector('.popup__input_edit_job')
+const popupInputEditName = document.querySelector('.popup__input_edit_name')
+const popupInputEditJob = document.querySelector('.popup__input_edit_job')
 
 //Добавление картинок
 const popupAdd = document.querySelector('.popup_add');
@@ -24,18 +24,19 @@ const popupImageCloseButton = document.querySelector('.popup__close_image');
 
 function popupToggle(popup) {
   popup.classList.toggle('popup_open');
+  document.addEventListener('keydown', popupCloseEsc);
 }
 
 //Попап изменения данных
 function handlerEditPopup() {   
-  popupInputElName.value = profileName.textContent;
-  popupInputElJob.value = profileJob.textContent;
+  popupInputEditName.value = profileName.textContent;
+  popupInputEditJob.value = profileJob.textContent;
 }
 
 function formsEditSubmitHandler(evt) {
   evt.preventDefault();
-  profileName.textContent = popupInputEditname.value;
-  profileJob.textContent = popupInputEditjob.value;
+  profileName.textContent = popupInputEditName.value;
+  profileJob.textContent = popupInputEditJob.value;
   popupToggle(popupEdit);
 }
 
@@ -43,6 +44,8 @@ function formsEditSubmitHandler(evt) {
 function handlerAddPopup() {
   popupInputAddName.value  = '';
   popupInputAddUrl.value = '';
+// Пользователь и так не может сделать submit нажатием на кнопку и нажатием на клавишу, если поля пустые и не пройдена валидация. 
+// Не вижу смысла добавлять сюда функцию
 }
 
 //Попап просмотра картинки
@@ -117,11 +120,12 @@ function popupCloseOverlay(evt) {
   } 
   popupToggle(popup);
 }
+//Исполнительный элемент карточек
+initialElements.forEach(makeElement);
 
 //Добавление слушителя на клики
 popupEditOpenButton.addEventListener('click', function() {
-  handlerEditPopup;
-  formsEditSubmitHandler;
+  handlerEditPopup();
   popupToggle(popupEdit);
 });
 popupEditCloseButton.addEventListener('click', function() {
@@ -130,7 +134,7 @@ popupEditCloseButton.addEventListener('click', function() {
 popupEditForms.addEventListener('submit', formsEditSubmitHandler);
 popupAddOpenButton.addEventListener('click', function() {
   popupToggle(popupAdd);
-  handlerAddPopup;
+  handlerAddPopup();
 });
 popupAddCloseButton.addEventListener('click', function() {
   popupToggle(popupAdd);
@@ -140,7 +144,7 @@ popupAddForms.addEventListener('submit', formsAddSubmitHandler);
 popupImageCloseButton.addEventListener('click', function() {
   popupToggle(popupImage);
 });
-document.addEventListener('keydown', popupCloseEsc);
+
 document.querySelectorAll('.popup').forEach(function(popup) {
   popup.addEventListener('click', popupCloseOverlay);
 })
