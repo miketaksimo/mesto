@@ -24,7 +24,12 @@ const popupImageCloseButton = document.querySelector('.popup__close_image');
 
 function popupToggle(popup) {
   popup.classList.toggle('popup_open');
-  document.addEventListener('keydown', popupCloseEsc);
+
+  if (popup !== null) {
+    document.addEventListener('keydown', popupCloseEsc);
+  } else {
+    document.removeEventListener('keydown', popupCloseEsc);
+  }
 }
 
 //Попап изменения данных
@@ -40,12 +45,14 @@ function formsEditSubmitHandler(evt) {
   popupToggle(popupEdit);
 }
 
-//Попап добавления картинок
-function handlerAddPopup() {
+
+function handlerAddPopup(evt) {
   popupInputAddName.value  = '';
   popupInputAddUrl.value = '';
 // Пользователь и так не может сделать submit нажатием на кнопку и нажатием на клавишу, если поля пустые и не пройдена валидация. 
 // Не вижу смысла добавлять сюда функцию
+  hideInputError();
+  setEventListeners({formElement, ...rest});
 }
 
 //Попап просмотра картинки
@@ -110,7 +117,7 @@ function popupCloseEsc(evt) {
   const popup = document.querySelector('.popup_open');
   if (popup !== null && evt.code === 'Escape') {
       popupToggle(popup);
-    }
+  }
 }
 
 function popupCloseOverlay(evt) {
