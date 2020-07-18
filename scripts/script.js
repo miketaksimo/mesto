@@ -21,6 +21,8 @@ const elementTemplate = document.querySelector('.element-template');
 //Попап картинки
 const popupImage = document.querySelector('.popup_image');
 const popupImageCloseButton = document.querySelector('.popup__close_image');
+const popupImg = document.querySelector('.popup__img');
+const popupImgCaption = document.querySelector('.popup__img-caption');
 
 function popupToggle(popup) {
   popup.classList.toggle('popup_open');
@@ -46,19 +48,23 @@ function formsEditSubmitHandler(evt) {
 }
 
 
-function handlerAddPopup(evt) {
+function handlerAddPopup() {
   popupInputAddName.value  = '';
   popupInputAddUrl.value = '';
-// Пользователь и так не может сделать submit нажатием на кнопку и нажатием на клавишу, если поля пустые и не пройдена валидация. 
-// Не вижу смысла добавлять сюда функцию
-  hideInputError();
-  setEventListeners({formElement, ...rest});
+  enableValidation({
+    formSelector: '.popup__forms',
+    inputSelector: '.popup__input',
+    submitButtonSelector: '.popup__save',
+    inactiveButtonClass: 'popup__save_inactive',
+    inputErrorClass: 'popup__input_error',
+    errorClass: 'popup__error'
+  });
 }
 
 //Попап просмотра картинки
 function handlerImagePopup(item) {
-  document.querySelector('.popup__img').src = item.link; 
-  document.querySelector('.popup__img-caption').textContent = item.name;
+  popupImg.src = item.link; 
+  popupImgCaption.textContent = item.name;
   popupToggle(popupImage);
 }
 
@@ -140,8 +146,8 @@ popupEditCloseButton.addEventListener('click', function() {
 });
 popupEditForms.addEventListener('submit', formsEditSubmitHandler);
 popupAddOpenButton.addEventListener('click', function() {
-  popupToggle(popupAdd);
   handlerAddPopup();
+  popupToggle(popupAdd);
 });
 popupAddCloseButton.addEventListener('click', function() {
   popupToggle(popupAdd);
