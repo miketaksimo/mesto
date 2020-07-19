@@ -5,8 +5,8 @@ const popupEditCloseButton = document.querySelector('.popup__close_edit');
 const popupEditForms = document.querySelector('.popup__forms_edit');
 const profileName = document.querySelector('.profile__title');
 const profileJob = document.querySelector('.profile__subtitle');
-const popupInputEditName = document.querySelector('.popup__input_edit_name')
-const popupInputEditJob = document.querySelector('.popup__input_edit_job')
+const popupInputEditName = document.querySelector('.popup__input_edit_name');
+const popupInputEditJob = document.querySelector('.popup__input_edit_job');
 
 //Добавление картинок
 const popupAdd = document.querySelector('.popup_add');
@@ -27,7 +27,7 @@ const popupImgCaption = document.querySelector('.popup__img-caption');
 function popupToggle(popup) {
   popup.classList.toggle('popup_open');
 
-  if (popup !== null) {
+  if (popup.classList.contains('popup_open')) {
     document.addEventListener('keydown', popupCloseEsc);
   } else {
     document.removeEventListener('keydown', popupCloseEsc);
@@ -51,14 +51,11 @@ function formsEditSubmitHandler(evt) {
 function handlerAddPopup() {
   popupInputAddName.value  = '';
   popupInputAddUrl.value = '';
-  enableValidation({
-    formSelector: '.popup__forms',
-    inputSelector: '.popup__input',
-    submitButtonSelector: '.popup__save',
-    inactiveButtonClass: 'popup__save_inactive',
-    inputErrorClass: 'popup__input_error',
-    errorClass: 'popup__error'
-  });
+
+  const inputList = Array.from(popupAdd.querySelectorAll('.popup__input'));
+  const buttonElement = popupAdd.querySelector('.popup__save');
+  const inactiveButtonClass = 'popup__save_inactive';
+  toggleButtonState({inputList, buttonElement, inactiveButtonClass});
 }
 
 //Попап просмотра картинки
